@@ -1,0 +1,64 @@
+$font-color: #2d2d2d
+
+.top-header
+  color: $font-color
+  a
+    color: #2d2d2d
+  [class$="-bar"]
+    padding: 0.25rem 0
+  &__user-bar
+    background-color: #eff3f4
+  .user-bar
+    display: flex
+    justify-content: flex-end
+    &__link
+      text-decoration: underline
+    &__login
+      margin-right: 1rem
+      position: relative
+      &:after
+        position: absolute
+        content: ''
+        width: 1px
+        height: 1rem
+        right: -8px
+        top: 1px
+        background-color: #2d2d2d
+
+  /* ----- Navigation ----- */
+  &__nav-bar
+    background-color: #005aab
+    a
+      color: #ffffff
+
+  /* ----- Search ----- */   
+  &__search-bar
+    background-color: #eff3f4
+
+    .search-bar__input-field
+      border-radius: 6px
+      border: 1px solid #cccccc
+      padding: 0.5rem
+      width: 50%
+      min-width: 300px
+      color: gray
+      outline: none
+
+.menu
+  display: flex
+  &__item
+    margin-right: 1rem
+    &:last-child
+      margin-right: 0
+
+@media screen and (max-width: 1340px)
+  .container
+    width: 90%
+
+@media screen and (max-width: 500px)
+  .search-bar__form
+    display: flex
+    justify-content: center
+
+  .top-header__search-bar .search-bar__input-field
+    width: 100%

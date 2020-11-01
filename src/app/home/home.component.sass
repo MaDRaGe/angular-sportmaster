@@ -1,0 +1,83 @@
+$slide-z: 100
+$logger-z: 200
+
+.slider
+  position: relative
+  height: 600px
+  &__slide-list
+    display: flex
+    position: relative
+  &__slide
+    position: absolute
+    z-index: $slide-z
+    opacity: 0
+    transition: opacity 0.3s ease
+
+  &__slide.visible
+    opacity: 1
+
+  &__logger
+    z-index: $logger-z
+    position: absolute
+    width: 100%
+    height: 100%
+
+  &__time-bar
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 3px
+    background-color: rgb(200, 0, 0)
+    animation-name: time-bar
+    animation-duration: 5s
+    animation-iteration-count: infinite
+    animation-timing-function: ease-in-out
+
+@keyframes time-bar
+  0%
+    width: 0
+    visibility: visible
+
+  100%
+    width: 100%
+    visibility: hidden
+
+.category
+  padding: 3rem 0
+  &__card-list
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+  &__card
+    overflow: hidden
+    width: 30%
+    height: 272px
+    margin-bottom: 20px
+    display: flex
+  &__link
+    position: relative
+    cursor: pointer
+    &:after
+      position: absolute
+      content: ''
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-color: rgba(0,0,0,0.3)
+      transition: 0.1s
+      opacity: 0
+    &:hover:after
+      opacity: 1
+  &__img
+    display: block
+
+  &__text
+    position: absolute
+    bottom: 0
+    left: 0
+    text-align: center
+    width: 100%
+  &__title
+    color: #ffffff

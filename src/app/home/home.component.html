@@ -1,0 +1,99 @@
+<section class="home">
+  <div class="slider">
+    <div class="slider__logger">
+      <div class="slider__time-bar"></div>
+    </div>
+    <div class="slider__slide-list">
+      <div class="slider__slide" [class.visible]="currentSlide === 1">
+        <img src="assets/images/slide1.jpg" alt="sportmaster" />
+      </div>
+      <div class="slider__slide" [class.visible]="currentSlide === 2">
+        <img src="assets/images/slide2.jpg" alt="sportmaster" />
+      </div>
+      <div class="slider__slide" [class.visible]="currentSlide === 3">
+        <img src="assets/images/slide3.jpg" alt="sportmaster" />
+      </div>
+    </div>
+  </div>
+  <div class="category">
+    <div class="container">
+      <div class="category__card-list">
+        <div class="category__card">
+          <a class="category__link" routerLink="/catalog/woman-clothes">
+            <div>
+              <img
+                class="category__img"
+                src="assets/images/home/woman-clothes.jpg"
+                alt="sportmaster"
+              />
+            </div>
+
+            <div class="category__text">
+              <h3 class="category__title">Женская одежда</h3>
+            </div>
+          </a>
+        </div>
+        <div class="category__card">
+          <a class="category__link" routerLink="/catalog/man-clothes">
+            <img
+              class="category__img"
+              src="assets/images/home/man-clothes.jpg"
+              alt="sportmaster"
+            />
+            <div class="category__text">
+              <h3 class="category__title">Мужская одежда</h3>
+            </div>
+          </a>
+        </div>
+        <div class="category__card">
+          <a class="category__link" routerLink="/catalog/child-clothes">
+            <img
+              class="category__img"
+              src="assets/images/home/child-clothes.jpg"
+              alt="sportmaster"
+            />
+            <div class="category__text">
+              <h3 class="category__title">Детская одежда</h3>
+            </div>
+          </a>
+        </div>
+        <div class="category__card">
+          <a class="category__link" routerLink="/catalog/woman-shoes">
+            <img
+              class="category__img"
+              src="assets/images/home/woman-shoes.jpg"
+              alt="sportmaster"
+            />
+            <div class="category__text">
+              <h3 class="category__title">Женская обувь</h3>
+            </div>
+          </a>
+        </div>
+        <div class="category__card">
+          <a class="category__link" routerLink="/catalog/man-shoes">
+            <img
+              class="category__img"
+              src="assets/images/home/man-shoes.jpg"
+              alt="sportmaster"
+            />
+            <div class="category__text">
+              <h3 class="category__title">Мужская обувь</h3>
+            </div>
+          </a>
+        </div>
+        <div class="category__card">
+          <a class="category__link" routerLink="/catalog/child-shoes">
+            <img
+              class="category__img"
+              src="assets/images/home/child-shoes.jpg"
+              alt="sportmaster"
+            />
+            <div class="category__text">
+              <h3 class="category__title">Детская обувь</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
