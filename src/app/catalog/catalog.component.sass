@@ -1,6 +1,12 @@
 
 .catalog
   padding: 2rem 0
+  &__card-list
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-start
+  &__card
+    margin-right: 15px
   &__row
     display: grid
     grid-template-areas: 'side-menu content'
@@ -9,3 +15,7 @@
     grid-area: side-menu
   &__content
     grid-area: content
+
+.category-table
+  border-collapse: collapse
+  border: 1px solid black

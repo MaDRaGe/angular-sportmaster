@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core'
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component'
 import { HeaderComponent } from './header/header.component'
 import { BrowserModule } from '@angular/platform-browser'
@@ -10,14 +11,28 @@ import { NotFoundComponent } from './not-found/not-found.component'
 import { Routes, RouterModule } from '@angular/router'
 import { MainModule } from './main/main.module';
 import { HomeComponent } from './home/home.component';
-import { CategoryCardComponent } from './category-card/category-card.component';
-import { ProductCardComponent } from './product-card/product-card.component';
+import { SafeUrlPipe } from './safe-url.pipe';
 
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'catalog', component: CatalogComponent },
-  { path: '**', component: NotFoundComponent },
+  { 
+    path: '', 
+    component: HomeComponent 
+  },
+  { 
+    path: 'catalog', 
+    component: CatalogComponent, 
+    children: [
+      {
+        path: '**',
+        component: CatalogComponent
+      }
+    ]
+  },
+  { 
+    path: '**', 
+    component: NotFoundComponent 
+  },
 ]
 
 @NgModule({
@@ -25,14 +40,16 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    CategoryCardComponent,
-    ProductCardComponent,
+    SafeUrlPipe,
   ],
   imports: [
+    CommonModule,
     MainModule,
     BrowserModule, 
     RouterModule.forRoot(appRoutes)
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  providers: [SafeUrlPipe],
+  exports: [SafeUrlPipe]
 })
 export class AppModule {}
